@@ -1,6 +1,6 @@
 // 1. Напишіть функцію addThemAll
 function addThemAll(...args){
-    return args.reduce((a, b) => a + b);;
+    return args.reduce((a, b) => a + b);
 }
 
 console.log(addThemAll(2,4)); // 6
@@ -43,7 +43,7 @@ const movies = [
 		releaseYear: 1987,
 		directedBy: 'McTiernan',
 		runningTimeInMinutes: 107,
-	},
+	}
 ];
 
 console.log(movies.sort(byProperty('releaseYear', '>'))); 
