@@ -54,39 +54,14 @@ console.log(movies.sort(byProperty('movieName', '>')));
 // виведе масив фільмів посортованих по назві, в алфавітному порядку
 
 function byProperty(property, direction) {
-    if(property === 'releaseYear'){
-        if(direction === '>'){
-	        return (r1, r2) => (r1.releaseYear > r2.releaseYear) ? 1 : (r1.releaseYear < r2.releaseYear) ? -1 : 0
-        }
-        if(direction === '<'){
-            return (r1, r2) => (r1.releaseYear < r2.releaseYear) ? 1 : (r1.releaseYear > r2.releaseYear) ? -1 : 0
-        }
-    }
-    if(property === 'runningTimeInMinutes'){
-        if(direction === '>'){
-	        return (r1, r2) => (r1.runningTimeInMinutes > r2.runningTimeInMinutes) ? 1 : (r1.runningTimeInMinutes < r2.runningTimeInMinutes) ? -1 : 0
-        }
-        if(direction === '<'){
-            return (r1, r2) => (r1.runningTimeInMinutes < r2.runningTimeInMinutes) ? 1 : (r1.runningTimeInMinutes > r2.runningTimeInMinutes) ? -1 : 0
-        }
-    }
-    if(property === 'movieName'){
-        if(direction === '>'){
-	        return (r1, r2) => (r1.movieName > r2.movieName) ? 1 : (r1.movieName < r2.movieName) ? -1 : 0
-        }
-        if(direction === '<'){
-            return (r1, r2) => (r1.movieName < r2.movieName) ? 1 : (r1.movieName > r2.movieName) ? -1 : 0
-        }
-    }
-	if(property === 'directedBy'){
-        if(direction === '>'){
-	        return (r1, r2) => (r1.directedBy > r2.directedBy) ? 1 : (r1.directedBy < r2.directedBy) ? -1 : 0
-        }
-        if(direction === '<'){
-            return (r1, r2) => (r1.directedBy < r2.directedBy) ? 1 : (r1.directedBy > r2.directedBy) ? -1 : 0
-        }
-    }
+	if(direction === '>'){
+		return (r1, r2) => (r1[property] > r2[property]) ? 1 : (r1[property] < r2[property]) ? -1 : 0
+	}
+	if(direction === '<'){
+		return (r1, r2) => (r1[property] < r2[property]) ? 1 : (r1[property] > r2[property]) ? -1 : 0
+	}
 }
+
 
 
 // 4. Напишіть функцію яка відфільтрує масив унікальних значень
